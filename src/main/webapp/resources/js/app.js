@@ -43,7 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     this.valueInput.value = el.value;
                     li.classList.add("selected");
                 }
-
                 this.ul.appendChild(li);
             });
 
@@ -314,11 +313,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 categories: []
             }
 
-            let form = this;
-
-            this.selectedCategories.forEach(e => {
+            this.selectedCategories.forEach(categoryId => {
                 let category = {
-                    id: e
+                    id: categoryId
                 }
                 donation.categories.push(category);
             });
@@ -331,7 +328,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (result === 'OK') {
                     document.getElementById('donation-form').submit();
                 }
-            })
+            });
         }
     }
 

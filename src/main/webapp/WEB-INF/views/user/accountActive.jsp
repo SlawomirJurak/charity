@@ -13,20 +13,22 @@
 <body>
 <header class="header--form-page">
     <nav class="container container--70">
-        <%@include file="menu/menu-user.jsp" %>
+        <%@include file="../menu/menu-user.jsp" %>
 
-        <%@include file="menu/menu-navigation.jsp" %>
+        <%@include file="../menu/menu-navigation.jsp" %>
     </nav>
 
     <div class="slogan container container--90">
-        <h2>
-            Dziękujemy za przesłanie formularza Na maila prześlemy wszelkie
-            informacje o odbiorze.
-        </h2>
+        <div class="slogan--item">
+            <h2>
+                Dziękujemy za aktywowanie konta.<br/>
+                Możesz się teraz zalogować.
+            </h2>
+        </div>
     </div>
 </header>
 
-<%@include file="footer.jsp" %>
+<%@include file="../footer.jsp" %>
 
 <script src="<c:url value="/resources/js/app.js"/>"></script>
 </body>

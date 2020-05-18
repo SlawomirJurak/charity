@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.sgnit.charity.service.DonationService;
 import pl.sgnit.charity.service.InstitutionService;
+import pl.sgnit.charity.util.EmailService;
 
 @Controller
 public class HomeController {
@@ -12,7 +13,7 @@ public class HomeController {
     private final DonationService donationService;
     private final InstitutionService institutionService;
 
-    public HomeController(DonationService donationService, InstitutionService institutionService) {
+    public HomeController(DonationService donationService, InstitutionService institutionService, EmailService emailService) {
         this.donationService = donationService;
         this.institutionService = institutionService;
     }

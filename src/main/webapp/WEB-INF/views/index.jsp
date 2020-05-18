@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <!DOCTYPE html>
 <html lang="pl">
@@ -15,7 +16,23 @@
 </head>
 <body>
 
-<%@include file="header.jsp"%>
+<header class="header--main-page">
+    <nav class="container container--70">
+
+        <%@include file="menu/menu-user.jsp" %>
+
+        <%@include file="menu/menu-navigation.jsp" %>
+    </nav>
+
+    <div class="slogan container container--90">
+        <div class="slogan--item">
+            <h1>
+                Zacznij pomagać!<br/>
+                Oddaj niechciane rzeczy w zaufane ręce
+            </h1>
+        </div>
+    </div>
+</header>
 
 <section class="stats">
     <div class="container container--85">

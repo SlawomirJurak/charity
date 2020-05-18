@@ -19,10 +19,11 @@
     </nav>
 
     <div class="slogan container container--90">
-        <h2>
-            Dziękujemy za przesłanie formularza Na maila prześlemy wszelkie
-            informacje o odbiorze.
-        </h2>
+        <div class="slogan--item">
+            <h2>
+                ${communicate}
+            </h2>
+        </div>
     </div>
 </header>
 
