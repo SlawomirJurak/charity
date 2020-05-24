@@ -7,7 +7,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <%@include file="jspf/head_meta.jspf"%>
     <link rel="stylesheet" href="<c:url value="resources/css/style.css"/>" />
 </head>
 <body>
@@ -31,7 +31,7 @@
 
         <div class="form-group form-group--buttons">
             <button class="btn" type="submit">Zaloguj się</button>
-            <a href="/register" class="btn btn--without-border">Załóż konto</a>
+            <a href="<c:url value="/user/register"/>" class="btn btn--without-border">Załóż konto</a>
         </div>
     </form>
 </section>

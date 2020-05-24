@@ -1,4 +1,7 @@
+let contextPath;
+
 $(document).ready(function () {
+    contextPath = $('meta[name="context-path"]').attr('content');
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -37,7 +40,7 @@ function registerNewUser(button, event) {
     }
 
     $.ajax({
-        url: administrator ? '/register/administrator' : '/register/user',
+        url: contextPath+(administrator ? '/register/administrator' : '/register/user'),
         method: 'POST',
         data: JSON.stringify(user),
         contentType: 'application/json'
@@ -69,7 +72,7 @@ function deactivateUser(element) {
 
 function activateDeactivateUser(element, activate) {
     let userId = element.closest('.users-container').data('id');
-    let url = activate ? '/user/activate/' : "/user/deactivate/";
+    let url = contextPath+(activate ? '/user/activate/' : "/user/deactivate/");
 
     $.ajax({
         url: url+userId,
@@ -88,6 +91,11 @@ function activateDeactivateUser(element, activate) {
                 element.closest('.users-container').find('.active-user').text('false');
             }
         }
+    }).fail(function (jqXHR, textStatus, errorThrown) {
+        console.log('Wystąpił błąd podczas rejestracji nowego użytkownika');
+        console.log(jqXHR);
+        console.log(textStatus);
+        console.log(errorThrown);
     });
 }
 
@@ -100,7 +108,7 @@ function updateUserData() {
     }
 
     $.ajax({
-        url: '/user/change/'+userId,
+        url: contextPath+'/user/change/'+userId,
         method: 'POST',
         data: JSON.stringify(user),
         contentType: 'application/json'
@@ -129,7 +137,7 @@ function changePassword() {
     };
 
     $.ajax({
-        url: '/user/changePassword/'+userId,
+        url: contextPath+'/user/changePassword/'+userId,
         method: 'POST',
         data: JSON.stringify(newPassword),
         contentType: 'application/json'

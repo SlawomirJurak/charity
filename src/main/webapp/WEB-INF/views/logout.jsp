@@ -7,7 +7,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>Document</title>
+    <%@include file="jspf/head_meta.jspf"%>
     <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>"/>
 </head>
 <body>
@@ -17,20 +17,6 @@
 
         <%@include file="menu/menu-navigation.jsp" %>
     </nav>
-
-<%--    <div class="slogan container container--90">--%>
-<%--        <div class="slogan--item">--%>
-<%--            <h2>Wylogowanie z systemu.</h2>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--    <div class="slogan container container--90">--%>
-<%--        <div class="slogan--item">--%>
-<%--            <form action="<c:url value="/logout"/>" method="post">--%>
-<%--                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>--%>
-<%--                <button class="btn" type="submit">Wyloguj się</button>--%>
-<%--            </form>--%>
-<%--        </div>--%>
-<%--    </div>--%>
     <section class="login-page">
         <h2>Wylogowanie z systemu</h2>
         <form action="<c:url value="/logout"/>" method="post">
@@ -41,8 +27,6 @@
         </form>
     </section>
 </header>
-
-<%--<%@include file="footer.jsp" %>--%>
 
 <script src="<c:url value="/resources/js/app.js"/>"></script>
 </body>

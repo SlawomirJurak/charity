@@ -1,5 +1,7 @@
-document.addEventListener("DOMContentLoaded", function () {
+let contextPath;
 
+document.addEventListener("DOMContentLoaded", function () {
+    contextPath = $('meta[name="context-path"]').attr('content');
     /**
      * Form Select
      */
@@ -188,8 +190,6 @@ document.addEventListener("DOMContentLoaded", function () {
         updateForm() {
             this.$step.innerText = this.currentStep;
 
-            // TODO: Validation
-
             this.slides.forEach(slide => {
                 slide.classList.remove("active");
 
@@ -320,7 +320,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 donation.categories.push(category);
             });
             $.ajax({
-                url: '/donation',
+                url: contextPath+'/donation',
                 method: 'POST',
                 data: JSON.stringify(donation),
                 contentType: 'application/json'

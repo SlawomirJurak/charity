@@ -7,8 +7,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <meta name="csrf-token" content="${_csrf.token}">
-    <title>Document</title>
+    <%@include file="../jspf/head_meta.jspf"%>
     <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>"/>
     <link rel="stylesheet" href="<c:url value="/resources/css/users.css"/>"/>
 </head>
@@ -24,7 +23,7 @@
 <div class="users">
     <h2>${userListTitle}</h2>
     <c:if test="${administrators}">
-        <a href="/user/administrator/new">
+        <a href="${pageContext.request.contextPath}/user/administrator/new">
             <button class="btn btn-new-admin">Dodaj administratora</button>
         </a>
     </c:if>
@@ -51,7 +50,7 @@
                             <div class="user-action btn-activate">Aktywuj</div>
                         </c:otherwise>
                     </c:choose>
-                    <div class="user-action"><a href="/user/delete/${user.id}" class="user-action">Usuń</a></div>
+                    <div class="user-action"><a href="<c:url value="/user/delete/${user.id}"/>" class="user-action">Usuń</a></div>
                 </c:if>
             </div>
         </div>
@@ -59,7 +58,6 @@
 </div>
 
 <script src="<c:url value="/resources/js/jquery-3.5.1.min.js"/>"></script>
-<script src="<c:url value="/resources/js/popper.min.js"/>"></script>
 <script src="<c:url value="/resources/js/user.js"/>"></script>
 
 </body>

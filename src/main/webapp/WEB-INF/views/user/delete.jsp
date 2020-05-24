@@ -7,7 +7,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>Document</title>
+    <%@include file="../jspf/head_meta.jspf"%>
     <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>"/>
 </head>
 <body>
@@ -27,10 +27,10 @@
             <button class="btn" type="submit">Usuń</button>
             <c:choose>
                 <c:when test="${user.administrator}">
-                    <a href="/user/administrators" class="btn btn--without-border">Powrót</a>
+                    <a href="<c:url value="/user/administrators"/>" class="btn btn--without-border">Powrót</a>
                 </c:when>
                 <c:otherwise>
-                    <a href="/user/users" class="btn btn--without-border">Powrót</a>
+                    <a href="<c:url value="/user/users"/>" class="btn btn--without-border">Powrót</a>
                 </c:otherwise>
             </c:choose>
         </div>
